@@ -1,0 +1,18 @@
+.card-header,.card-body{
+    text-align: center;
+}
+ /* .container{
+     display:inline-block;
+     flex-wrap: wrap;
+     
+
+ }
+ /* .graph-crime{
+     display: inline-block;
+    
+ } */
+  .filters{
+    margin: auto;
+    display: block;
+
+ }

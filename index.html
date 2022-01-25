@@ -1,0 +1,424 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <title>Savdhaan India</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Savdhaan India</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Get crime news
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://www.aajtak.in/crime">Aajtak crime news</a></li>
+                            <li><a class="dropdown-item" href="https://www.abplive.com/topic/ghaziabad-crime">Abp crime news</a></li>
+                
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div></div>
+    <h5 class="card-header">Featured</h5>
+    <div class="card-body">
+        <h5 class="card-title">Recent Crime News</h5>
+        <p class="card-text">
+            <script type="text/javascript" src="https://www.24-7pressrelease.com/js/newsfeed.js"></script>
+            <script type="text/javascript"
+                src="https://www.24-7pressrelease.com/js/js_press_releases.php?category_id=195&limit=5"></script>
+            <script type="text/javascript">
+                js_style = 1;
+                target = "_blank";
+                if (newsfeed) {
+                    showNews(newsfeed, js_style);
+                } else {
+                    document.write("News feeds did not import correctly. Please contact the 24-7 pressrelease administrators");
+                }
+            </script>
+        </p>
+        <a href="https://www.indiatoday.in/crime" class="btn btn-dark">Read More</a>
+    </div>
+    </div>
+    <!-- <div class="card text-dark bg-light">
+        
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-dark">Read More</a>
+        </div>
+    </div>
+    <div class="card text-dark bg-light">
+        
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-dark">Read More</a>
+        </div> -->
+    </div>
+    <div class="filters">
+
+        <div class="card text-center">
+            <div class="card-header">
+                <strong>Get the previous year crime rate analysis here :</strong>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Enter state ,category of crime and year.</h5>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <select class="custom-select" name="state" id="state">
+                        <option selected value="0">Select your state</option>
+                        <option value="1">Andaman & Nicobar Islands
+                        </option>
+                        <option value="2">Andhra Pradesh
+
+                        </option>
+                        <option value="3">Arunachal Pradesh
+
+                        </option>
+                        <option value="4">Assam
+                        </option>
+                        <option value="5">Bihar
+
+                        </option>
+                        <option value="6">Chandigarh
+
+                        </option>
+                        <option value="7">Chhattisgarh
+
+                        </option>
+                        <option value="8">Dadra & Nagar Haveli
+
+                        </option>
+                        <option value="9">Daman & Diu
+
+                        </option>
+                        <option value="10">Delhi
+
+                        </option>
+                        <option value="11">Goa
+
+                        </option>
+                        <option value="12">Gujarat
+
+                        </option>
+                        <option value="13">Haryana
+
+                        </option>
+                        <option value="14">Himachal Pradesh
+
+                        </option>
+                        <option value="15">Jammu & Kashmir
+
+                        </option>
+                        <option value="16">Jharkhand
+
+                        </option>
+                        <option value="17">Karnataka
+
+                        </option>
+                        <option value="18">Kerala
+
+                        </option>
+                        <option value="19">Lakshadweep
+
+                        </option>
+                        <option value="20">Madhya Pradesh
+
+                        </option>
+                        <option value="21">Maharashtra
+
+                        </option>
+                        <option value="22">Manipur
+
+                        </option>
+                        <option value="23">Meghalaya
+
+                        </option>
+                        <option value="24">Mizoram
+
+                        </option>
+                        <option value="25">Nagaland
+
+                        </option>
+                        <option value="26">Odisha
+
+                        </option>
+                        <option value="27">Puducherry
+
+                        </option>
+                        <option value="28">Punjab
+
+                        </option>
+                        <option value="29">Rajasthan
+
+                        </option>
+                        <option value="30">Sikkim
+
+                        </option>
+                        <option value="31">Tamil Nadu
+
+                        </option>
+                        <option value="32">Tripura
+
+                        </option>
+                        <option value="33">Uttar Pradesh
+
+                        </option>
+                        <option value="34">Uttarakhand
+
+                        </option>
+                        <option value="35">West Bengal
+
+                        </option>
+
+
+
+                    </select>
+                    <br>
+                    <br>
+                    <select class="custom-select" id="year" name="category">
+                        <option selected value="0">Select crime category</option>
+                        <option value="1">Corruption</option>
+                        <option value="2">Dowry</option>
+                        <option value="3">Fraud</option>
+                        <option value="4">Kidnapping</option>
+                        <option value="5">Property Dispute</option>
+                        <option value="6">Murder</option>
+                        <option value="7">Rape</option>
+                        <option value="8">Sexual harassment</option>
+                        <option value="9">Theft</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="card text-center">
+            <div class="card-body">
+
+                <div class="graph-crime"><img src="data:image/png;base64,{{ data }}" alt="" height="=50%" width="100%">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="filters">
+
+        <div class="card text-center">
+            <div class="card-header">
+                <strong> Get the crime rate prediction here.</strong>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Enter state ,category of crime and year.</h5>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <select class="custom-select" name="state_pred" id="state">
+                        <option selected value="0">Select your state</option>
+                        <option value="1">Andaman & Nicobar Islands
+                        </option>
+                        <option value="2">Andhra Pradesh
+
+                        </option>
+                        <option value="3">Arunachal Pradesh
+
+                        </option>
+                        <option value="4">Assam
+                        </option>
+                        <option value="5">Bihar
+
+                        </option>
+                        <option value="6">Chandigarh
+
+                        </option>
+                        <option value="7">Chhattisgarh
+
+                        </option>
+                        <option value="8">Dadra & Nagar Haveli
+
+                        </option>
+                        <option value="9">Daman & Diu
+
+                        </option>
+                        <option value="10">Delhi
+
+                        </option>
+                        <option value="11">Goa
+
+                        </option>
+                        <option value="12">Gujarat
+
+                        </option>
+                        <option value="13">Haryana
+
+                        </option>
+                        <option value="14">Himachal Pradesh
+
+                        </option>
+                        <option value="15">Jammu & Kashmir
+
+                        </option>
+                        <option value="16">Jharkhand
+
+                        </option>
+                        <option value="17">Karnataka
+
+                        </option>
+                        <option value="18">Kerala
+
+                        </option>
+                        <option value="19">Lakshadweep
+
+                        </option>
+                        <option value="20">Madhya Pradesh
+
+                        </option>
+                        <option value="21">Maharashtra
+
+                        </option>
+                        <option value="22">Manipur
+
+                        </option>
+                        <option value="23">Meghalaya
+
+                        </option>
+                        <option value="24">Mizoram
+
+                        </option>
+                        <option value="25">Nagaland
+
+                        </option>
+                        <option value="26">Odisha
+
+                        </option>
+                        <option value="27">Puducherry
+
+                        </option>
+                        <option value="28">Punjab
+
+                        </option>
+                        <option value="29">Rajasthan
+
+                        </option>
+                        <option value="30">Sikkim
+
+                        </option>
+                        <option value="31">Tamil Nadu
+
+                        </option>
+                        <option value="32">Tripura
+
+                        </option>
+                        <option value="33">Uttar Pradesh
+
+                        </option>
+                        <option value="34">Uttarakhand
+
+                        </option>
+                        <option value="35">West Bengal
+
+                        </option>
+
+
+
+                    </select>
+                    <br>
+                    <br>
+                    <select class="custom-select" id="year" name="category_pred">
+                        <option selected value="0">Select crime category</option>
+                        <option value="1">Corruption</option>
+                        <option value="2">Dowry</option>
+                        <option value="3">Fraud</option>
+                        <option value="4">Kidnapping</option>
+                        <option value="5">Property Dispute</option>
+                        <option value="6">Murder</option>
+                        <option value="7">Rape</option>
+                        <option value="8">Sexual harassment</option>
+                        <option value="9">Theft</option>
+                    </select>
+                    <br>
+                    <br>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"><strong>Enter year to get the
+                                prediction.</strong></label><span>
+                            <input type="number" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="year_pred" placeholder="Enter year" max="3000"
+                                min="2000"></span>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">The predicted crime cases are : {{ predicted}} </h5>
+                <div class="graph-crime"><img src="data:image/png;base64,{{ pred_graph }}" alt="" height="=30%"
+                        width="70%">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">GET email updates:</h5>
+            <form method="post">
+                <div class="mb-3">
+                    {% csrf_token %}
+                    <label for="exampleInputEmail1" class="form-label"><strong>Enter your email address below to get
+                            updates :</strong></label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="email" placeholder="Enter email here....">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

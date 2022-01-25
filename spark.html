@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Crime Index Application</title>
+</head>
+<style>
+  /* Style the navbar */
+  #navbar {
+    overflow: hidden;
+    background-color: #333;
+    z-index: 2;
+  }
+
+  /* Navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky+.content {
+    padding-top: 60px;
+  }
+
+  .carousel slide {
+    z-index: 1;
+  }
+</style>
+
+<body>
+  <div id="navbar">
+    <a href="#home">Home</a>
+    <a href="index.html">News</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html">Analysis</a>
+  </div>
+  <div class="pimg1">
+    <div class="ptext">
+      <span class="border">
+        Crime In India
+      </span>
+      <br></br>
+
+
+    </div>
+
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/caroimg1.jpg' %}" height="350px" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+          <button type="submit" onclick="location.href='index.html'" class="button">Get started <i
+              class="fas fa-angle-double-right"></i> </button>
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/caroimg2.jpg' %}" height="350px" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="submit" onclick="location.href='index.html'" class="button">Get started <i
+              class="fas fa-angle-double-right"></i> </button>
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/caroimg3.jpg' %}" height="350px" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <button type="submit" onclick="location.href='index.html'" class="button">Get started <i
+              class="fas fa-angle-double-right"></i> </button>
+
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- <div class="pimg1">
+    <div class="ptext">
+      <span class="border">
+        Crime In India
+      </span>
+      <br></br>
+      
+
+    </div>
+
+</div> -->
+  <section class="section section-light">
+    <h2>How Safe We Are?</h2>
+    <p>Various factors can cause people feel insecure. Firstly, media somewhat encourage people to worry about their
+      safety by informing about high crime rates. News programmes on TV tend to report sensational crimes to attract
+      more audience. If someone is constantly exposed to violent images of crimes such as terror in public places, the
+      person would doubt the security more compared to someone who is not aware of the accidents. Secondly, natural
+      disasters occur more and more frequently as a result of global warming, making people difficult to ensure their
+      safety even at home. Clearly, we are experiencing more common extreme weather condition such as flooding and
+      droughts across the globe. Since we cannot avoid the damage of these natural disasters by staying inside, fear of
+      dangerous weather conditions keeps growing among people.
+      So prevention can only save us from the possible crime ,remember to get aware to about the region as crime can
+      happen to anyone and at anytime.
+    </p>
+  </section>
+  <div class="pimg2">
+    <div class="ptext">
+      <span class="border">
+        Crime against Women
+      </span>
+    </div>
+  </div>
+  <section class="section section-dark">
+    <h2>Section Two</h2>
+    <p>In order to tackle this problem, governments and individuals should work together. Governments can place more
+      police on streets to deter criminals and protect citizens. By doing so, governments can reduce crime rates as well
+      as people’s fear of offenses. At the same time, individuals should carefully select what to watch on media and
+      understand the reasons for violent tendency of news. In addition, planning safety measures and precautions in the
+      event of natural disaster can help allay concern of the public. One good example here is to build sea walls to
+      prevent cities from being damaged by flooding.
+    </p>
+  </section>
+  <div class="pimg3">
+    <div class="ptext">
+      <span class="border">
+        Juvenlille crime
+      </span>
+    </div>
+  </div>
+  <section class="section section-dark">
+    <div class="counters">
+      <div class="container">
+        <div>
+          <div class="counter" data-target="405861"><span class="text-slider-items">
+              989232
+            </span>
+            <strong class="text-slider"></strong>
+          </div>
+          <h1>Crime against Women</h1>
+        </div>
+
+        <div>
+          <div class="counter" data-target="360089"><span class="text-slider-items">
+              85673
+            </span>
+            <strong class="text-slider"></strong>
+          </div>
+          <h1>Murders</h1>
+        </div>
+        <div>
+          <div class="counter" data-target="148185"><span class="text-slider-items">
+              1000212
+            </span>
+            <strong class="text-slider"></strong>
+          </div>
+          <h1>Crime against Childern</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="pimg1">
+
+
+  </div>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
+  <script src="./typed.js-master/lib/typed.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+
+  <!-- Add this script for successful 
+        implementation of typed.js  -->
+  <script>
+    if ($(".text-slider").length == 1) {
+
+      var typed_strings =
+        $(".text-slider-items").text();
+
+      var typed = new Typed(".text-slider", {
+        strings: typed_strings.split(", "),
+        typeSpeed: 50,
+        loop: true,
+        backDelay: 900,
+        backSpeed: 30,
+      });
+    }
+  </script>
+</body>
+
+</html>
